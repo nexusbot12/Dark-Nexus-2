@@ -2,7 +2,7 @@ module.exports.config = {
     name: "hug",
     version: "1.0.4",
     role: 0,
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     description: "Hug two users together using custom image canvas",
     category: "love",
     guide: {
@@ -134,7 +134,7 @@ module.exports.onStart = async function ({ api, event, args, Users }) {
 
         return api.sendMessage(
             {
-                body: "❤️ জাঁকজমকপূর্ণ কোলাকুলি! ❤️\n\n- Owner: 一 ᎡᎪᏚᎬᏞཐི༏ཋྀ࿐",
+                body: "❤️ জাঁকজমকপূর্ণ কোলাকুলি! ❤️\n\n- Owner: 一 ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐",
                 attachment: fs.createReadStream(cachePath)
             },
             event.threadID,
