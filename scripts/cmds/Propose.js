@@ -3,7 +3,7 @@ module.exports.config = {
     aliases: ["প্রপোজ", "lovepropose"],
     version: "1.0.0",
     role: 0,
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     description: "Propose to someone with a custom canvas background",
     category: "love",
     guide: {
@@ -19,7 +19,7 @@ module.exports.onLoad = async function () {
     if (!fs.existsSync(cacheDir)) {
         fs.mkdirSync(cacheDir, { recursive: true });
     }
-    console.log("[ PROPOSE CMD ] -> Loaded successfully by: Rasel Mahmud");
+    console.log("[ PROPOSE CMD ] -> Loaded successfully by:Tanbir Hosen");
 };
 
 module.exports.onStart = async function ({ api, event, args, Users }) {
