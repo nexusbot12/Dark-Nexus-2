@@ -3,11 +3,7 @@
 # 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 👾🫰🏻𝐇𝐮𝐛
 
 <p align="center">
-  <img src="https://i.imgur.com/hhdsIGv.jpeg" width="280"/>
-</p>
-
-<p align="center">
-  <img src="http://readme-typing-svg.herokuapp.com?color=00ffff&center=true&vCenter=true&lines=—̳͟͞͞🇹o̶🅿☜ 𝐒𝖒ꪖR̶𝐭️✰🅱𝐎🆇︎_۵༎࿐" alt= 🇹o̶🅿☜ 𝐒𝖒ꪖR̶𝐭️✰🅱𝐎🆇︎" typing"/>
+  <img src="http://readme-typing-svg.herokuapp.com?color=00ffff&center=true&vCenter=true&lines=—̳͟͞͞🇹o̶🅿☜+𝐒𝖒ꪖR̶𝐭️✰🅱𝐎🆇︎_۵༎࿐" alt="TOP SMART BOX typing"/>
 </p>
 
 <p align="center">
@@ -15,10 +11,6 @@
   <img src="http://readme-typing-svg.herokuapp.com?color=ff69b4&center=true&vCenter=true&lines=𝐓𝐚𝐧𝐛𝐢𝐫+𝐇𝐨𝐬𝐞𝐧" alt="Owner typing"/><br><br>
   <strong>📅 𝐑𝐞𝐥𝐞𝐚𝐬𝐞𝐝:</strong><br>
   <img src="http://readme-typing-svg.herokuapp.com?color=ff1493&center=true&vCenter=true&lines=07%2F09%2F2026" alt="Release date typing"/>
-</p>
-
-<p align="center">
-  <img src="https://i.imgur.com/hhdsIGv.jpeg" width="280"/>
 </p>
 
 ---
@@ -35,16 +27,12 @@
 
 ## 🖼️ 𝐁𝐨𝐭 𝐏𝐫𝐨𝐟𝐢𝐥𝐞 ✨
 
-<p align="center">
-  <img src="https://i.imgur.com/hhdsIGv.jpeg" alt="Bot Image" width="300"/>
-</p>
-
 ---
 
 ## 🚀 ব্যবহারবিধি (How to use)
 
 ১. নিচের Messenger গ্রুপে জয়েন করুন ✅  
-২. কমান্ড লিখুন আর ম্যাজিক উপভোগ করুন 🫰🏻🕺🏻
+২. কমান্ড লিখুন আর ম্যাজিক উপভোগ করুন 🫰🏻🕺🏻  
 ৩. বটের কমান্ড জানতে *help লিখতে হবে 👍🏻  
 
 🔗 **Messenger Group:** 👉 [এখানে ক্লিক করে জয়েন করুন](https://m.me/j/_LABNvSJhdX2_CfN/?send_source=gc%3Acopy_invite_link_t)
@@ -63,10 +51,6 @@
 ## 💬 শেষ কিছু কথা
 
 > 🗣️ এই বট বানানো হয়েছে মজা, ভালোবাসা আর একটু ম্যাজিক দিয়ে।  
-
-<p align="center">
-  <img src="https://i.imgur.com/hhdsIGv.jpeg" width="280"/>
-</p>
 
 <p align="center">
   <strong>
