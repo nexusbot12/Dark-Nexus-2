@@ -7,29 +7,25 @@ module.exports = {
   config: {
     name: "age",
     version: "1.2",
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     role: 0,
     countDown: 5,
     shortDescription: "Calculate age with stylish card",
     longDescription: "Calculate age and show in stylish card",
     category: "utility",
     guide: {
-      en: "{pn} [birthdate in YYYY-MM-DD format]\nExample: {pn} 2000-01-15"
+      en: "{pn} [birthdate in YYYY-MM-DD format]\nExample: {pn} 2007-04-04"
     }
   },
 
   onStart: async function ({ api, event, args, message }) {
     try {
-      // Check if birthdate is provided
-      if (args.length === 0) {
-        return message.reply("⚠️ Please provide your birthdate in YYYY-MM-DD format\nExample: /age 2000-01-15");
-      }
-
-      const birthdateStr = args[0];
+      // Set default birthdate to Tanbir Hosen's birthdate if no args provided
+      const birthdateStr = args.length > 0 ? args[0] : "2007-04-04";
       const birthdateRegex = /^\d{4}-\d{2}-\d{2}$/;
       
       if (!birthdateRegex.test(birthdateStr)) {
-        return message.reply("❌ Invalid date format! Please use YYYY-MM-DD format.\nExample: /age 2000-01-15");
+        return message.reply("❌ Invalid date format! Please use YYYY-MM-DD format.\nExample: /age 2007-04-04");
       }
 
       // Parse birthdate
@@ -70,7 +66,7 @@ module.exports = {
 
       // Create canvas
       const width = 1200;
-      const height = 650; // Reduced height since time section removed
+      const height = 650;
       const canvas = createCanvas(width, height);
       const ctx = canvas.getContext("2d");
 
@@ -88,7 +84,7 @@ module.exports = {
 
       // Send message
       await message.reply({
-        body: `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗
+        body: `╔════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱════╗
 🎂 AGE CALCULATOR 🎂
 ━━━━━━━━━━━━━━━━━━
 📅 Birthdate: ${formattedBirthdate}
@@ -97,7 +93,7 @@ module.exports = {
 🎁 Next birthday in: ${daysUntilBirthday} days
 📊 Born on: ${birthDayName}
 ━━━━━━━━━━━━━━━━━━
-✨ Powered by: 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 | Rasel Mahmud
+✨ Powered by: 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 | Tanbir Hosen
 ╚═══════════════════╝`,
         attachment: fs.createReadStream(cachePath)
       });
@@ -121,7 +117,6 @@ function calculateAge(birthdate, now) {
   let months = now.getMonth() - birthdate.getMonth();
   let days = now.getDate() - birthdate.getDate();
 
-  // Adjust negative values
   if (days < 0) {
     const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
     days += prevMonth.getDate();
@@ -133,14 +128,12 @@ function calculateAge(birthdate, now) {
     years--;
   }
 
-  // Calculate total days lived
   const diffTime = Math.abs(now - birthdate);
   const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   const totalHours = Math.floor(diffTime / (1000 * 60 * 60));
   const totalMinutes = Math.floor(diffTime / (1000 * 60));
   const totalSeconds = Math.floor(diffTime / 1000);
 
-  // Calculate hours, minutes, seconds
   let hours = now.getHours() - birthdate.getHours();
   let minutes = now.getMinutes() - birthdate.getMinutes();
   let seconds = now.getSeconds() - birthdate.getSeconds();
@@ -218,7 +211,6 @@ function getZodiacEmoji(zodiac) {
 }
 
 function drawBackground(ctx, width, height) {
-  // Gradient background
   const gradient = ctx.createLinearGradient(0, 0, width, height);
   gradient.addColorStop(0, "#1a1a2e");
   gradient.addColorStop(0.5, "#16213e");
@@ -226,7 +218,6 @@ function drawBackground(ctx, width, height) {
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
 
-  // Star effect
   ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
   for (let i = 0; i < 100; i++) {
     const x = Math.random() * width;
@@ -237,11 +228,9 @@ function drawBackground(ctx, width, height) {
     ctx.fill();
   }
 
-  // Geometric patterns
   ctx.strokeStyle = "rgba(255, 215, 0, 0.1)";
   ctx.lineWidth = 1;
   
-  // Circles
   for (let i = 0; i < 8; i++) {
     const radius = 50 + i * 60;
     ctx.beginPath();
@@ -258,19 +247,16 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   const cardX = 50;
   const cardY = 50;
 
-  // Card shadow
   ctx.shadowColor = "rgba(255, 215, 0, 0.3)";
   ctx.shadowBlur = 30;
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
 
-  // Card background
   ctx.fillStyle = "rgba(25, 25, 35, 0.9)";
   ctx.beginPath();
   ctx.roundRect(cardX, cardY, cardWidth, cardHeight, 25);
   ctx.fill();
 
-  // Card border
   ctx.shadowBlur = 0;
   ctx.strokeStyle = "#ffd700";
   ctx.lineWidth = 3;
@@ -278,7 +264,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.roundRect(cardX, cardY, cardWidth, cardHeight, 25);
   ctx.stroke();
 
-  // Title
   ctx.fillStyle = "#ffd700";
   ctx.font = "bold 50px 'Segoe UI', Arial, sans-serif";
   ctx.textAlign = "center";
@@ -287,7 +272,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.fillText("🎂 AGE CALCULATOR 🎂", width / 2, cardY + 70);
   ctx.shadowBlur = 0;
 
-  // Title divider
   ctx.strokeStyle = "rgba(255, 215, 0, 0.3)";
   ctx.lineWidth = 2;
   ctx.beginPath();
@@ -295,30 +279,24 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.lineTo(cardX + cardWidth - 150, cardY + 90);
   ctx.stroke();
 
-  // Main content area
   const contentY = cardY + 140;
   const column1X = cardX + 80;
   const column2X = cardX + cardWidth / 2 + 40;
 
-  // Function to draw info box
   function drawInfoBox(x, y, icon, title, value, color = "#ffffff") {
-    // Box background
     ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
     ctx.beginPath();
     ctx.roundRect(x, y, 450, 50, 10);
     ctx.fill();
 
-    // Icon
     ctx.fillStyle = "#ffd700";
     ctx.font = "28px Arial";
     ctx.fillText(icon, x + 20, y + 35);
 
-    // Title
     ctx.fillStyle = "#cccccc";
     ctx.font = "bold 20px 'Segoe UI', Arial, sans-serif";
     ctx.fillText(title, x + 60, y + 25);
 
-    // Value
     ctx.fillStyle = color;
     ctx.font = "bold 22px 'Segoe UI', Arial, sans-serif";
     ctx.textAlign = "right";
@@ -326,7 +304,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
     ctx.textAlign = "left";
   }
 
-  // Left column
   let currentY = contentY;
   drawInfoBox(column1X, currentY, "📅", "Birth Date", formattedBirthdate, "#ffffff");
   currentY += 65;
@@ -342,7 +319,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   
   drawInfoBox(column1X, currentY, "⭐", "Zodiac Sign", `${zodiac} ${zodiacEmoji}`, "#ffcc66");
 
-  // Right column
   currentY = contentY;
   drawInfoBox(column2X, currentY, "🎂", "Next Birthday", `in ${daysUntilBirthday} days`, "#ff6666");
   currentY += 65;
@@ -358,7 +334,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   
   drawInfoBox(column2X, currentY, "📈", "Total Minutes", age.totalMinutes.toLocaleString(), "#66ffcc");
 
-  // Detailed age section (moved up since time section removed)
   const detailY = cardY + cardHeight - 120;
   ctx.fillStyle = "rgba(255, 215, 0, 0.1)";
   ctx.beginPath();
@@ -374,19 +349,16 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.font = "bold 22px 'Segoe UI', Arial, sans-serif";
   ctx.fillText(`${age.years}y ${age.months}m ${age.days}d ${age.hours}h ${age.minutes}m ${age.seconds}s`, width / 2, detailY + 60);
 
-  // Footer credit (moved up)
   const footerY = cardY + cardHeight - 30;
   ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
   ctx.font = "italic 18px 'Segoe UI', Arial, sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("✨ Powered by: Heli•LUMO | Created by Rasel Mahmud ✨", width / 2, footerY);
+  ctx.fillText("✨ Powered by: DARK•NEXUS | Created by Tanbir Hosen ✨", width / 2, footerY);
 
-  // Corner decorations
   ctx.strokeStyle = "rgba(255, 215, 0, 0.3)";
   ctx.lineWidth = 2;
   const cornerSize = 30;
   
-  // Top-left
   ctx.beginPath();
   ctx.moveTo(cardX + 20, cardY + 20);
   ctx.lineTo(cardX + 20 + cornerSize, cardY + 20);
@@ -394,7 +366,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.lineTo(cardX + 20, cardY + 20 + cornerSize);
   ctx.stroke();
   
-  // Top-right
   ctx.beginPath();
   ctx.moveTo(cardX + cardWidth - 20, cardY + 20);
   ctx.lineTo(cardX + cardWidth - 20 - cornerSize, cardY + 20);
@@ -402,7 +373,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.lineTo(cardX + cardWidth - 20, cardY + 20 + cornerSize);
   ctx.stroke();
   
-  // Bottom-left
   ctx.beginPath();
   ctx.moveTo(cardX + 20, cardY + cardHeight - 20);
   ctx.lineTo(cardX + 20 + cornerSize, cardY + cardHeight - 20);
@@ -410,7 +380,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.lineTo(cardX + 20, cardY + cardHeight - 20 - cornerSize);
   ctx.stroke();
   
-  // Bottom-right
   ctx.beginPath();
   ctx.moveTo(cardX + cardWidth - 20, cardY + cardHeight - 20);
   ctx.lineTo(cardX + cardWidth - 20 - cornerSize, cardY + cardHeight - 20);
@@ -419,7 +388,6 @@ function drawMainCard(ctx, width, height, birthdateStr, age, formattedBirthdate,
   ctx.stroke();
 }
 
-// Add roundRect function to canvas context
 if (typeof CanvasRenderingContext2D !== 'undefined' && !CanvasRenderingContext2D.prototype.roundRect) {
   CanvasRenderingContext2D.prototype.roundRect = function (x, y, width, height, radius) {
     if (width < 2 * radius) radius = width / 2;
@@ -433,4 +401,4 @@ if (typeof CanvasRenderingContext2D !== 'undefined' && !CanvasRenderingContext2D
     this.closePath();
     return this;
   };
-    }
+}
