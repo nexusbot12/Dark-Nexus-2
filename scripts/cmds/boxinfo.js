@@ -7,7 +7,7 @@ module.exports = {
     name: "boxinfo",
     aliases: ["groupinfo", "gcinfo", "infogc", "infobox"],
     version: "3.0.0",
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     role: 0,
     shortDescription: "Detailed Group Information",
     category: "box chat",
@@ -64,7 +64,7 @@ module.exports = {
   • 💬 Messages : ${formattedMsgCount}
 
 ─────────────────────
-✨ Developed By: Rasel Mahmud`;
+😇 Developed By: 𝚃𝙰𝙽𝙱𝙸𝚁`;
 
       // 📩 মেসেজ পাঠানোর ফাংশন
       const sendMsg = (attachmentStream = null) => {
