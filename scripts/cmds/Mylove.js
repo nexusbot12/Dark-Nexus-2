@@ -9,7 +9,7 @@ module.exports = {
   config: {
     name: "mylove",
     version: "9.8",
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     countDown: 5,
     role: 0,
     shortDescription: "Create couple love photo with circular Facebook profile pictures",
@@ -70,9 +70,10 @@ module.exports = {
       const lovePercent = Math.floor(Math.random() * 101);
 
       // ---------- Final message ----------
-      const loveText = `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗
-🔥${lovePercent}%💞[🄼🅈 🄻🄾🅅🄴]💞${lovePercent}%🔥
-╚═══════════════════╝`;
+      const loveText = `╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗
+🔥${lovePercent}%🌷[🄼🅈 🄻🄾🅅🄴]
+🫅🏻𝐀𝐮𝐭𝐡𝐨𝐫:☜𝐓𝐚𝐧𝐛𝐢𝐫 𝐇𝐨𝐬𝐞𝐧_۵
+╚═══════════════╝`;
 
       await bg.quality(100).writeAsync(finalPath);
 
