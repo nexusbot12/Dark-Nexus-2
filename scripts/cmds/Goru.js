@@ -4,7 +4,7 @@ const axios = require("axios");
 const { createCanvas, loadImage } = require("canvas");
 
 // 👑 বসের ইউজার আইডি
-const BOSS_ID = "61592251274295";
+const BOSS_ID = "61592233286410";
 
 // সেফ বাফার ডাউনলোডার
 const fetchBuffer = async (url) => {
