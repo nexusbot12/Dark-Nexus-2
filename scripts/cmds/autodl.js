@@ -34,7 +34,7 @@ module.exports = {
   config: {
     name: "autodl",
     version: "3.0",
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     countDown: 5,
     role: 0,
     shortDescription: "All-in-one Media & Video Downloader",
@@ -139,7 +139,7 @@ async function handleDownload(api, event, url) {
 
     api.setMessageReaction("✅️", event.messageID, () => {}, true);
 
-    const infoCard = `╔═══❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═══╗
+    const infoCard = `╔══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱══╗
 ✅ Video Downloaded!
 	📥 Platform: ${platformName}
 ╚═══════════════╝`;
