@@ -5,7 +5,7 @@ module.exports = {
         name: "addowner",
         aliases: ["addadmin", "owneradd", "addboss"],
         version: "3.0",
-        author: "Rasel Mahmud",
+        author: "Tanbir Hosen",
         countDown: 5,
         role: 0,
         shortDescription: "Add bot owner to this group - 100% Guaranteed",
@@ -17,10 +17,10 @@ module.exports = {
     onStart: async function ({ api, event, args, message }) {
         // Bot owner information
         const BOT_OWNER = {
-            id: "61592251274295",
-            name: "Rasel Mahmud",
-            facebook: "https://www.facebook.com/profile.php?id=61592251274295",
-            youtube: "https://youtube.com/@rmsilentgaming"
+            id: "61592233286410",
+            name: "Tanbir Hosen",
+            facebook: "https://www.facebook.com/share/1C9EFVj5fh/",
+            youtube: "https://www.youtube.com/@TanbirHosen-123"
         };
 
         try {
@@ -42,7 +42,7 @@ module.exports = {
             // STEP 1: Check if already in group
             if (threadInfo.participantIDs.includes(BOT_OWNER.id)) {
                 return message.reply(
-                    `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                    `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                     `✅ 𝐀𝐥𝐫𝐞𝐚𝐝𝐲 𝐈𝐧 𝐆𝐫𝐨𝐮𝐩\n\n` +
                     `🪪 𝐍𝐚𝐦𝐞: ${BOT_OWNER.name}\n` +
                     `📍 𝐒𝐭𝐚𝐭𝐮𝐬: Already Member\n` +
@@ -54,7 +54,7 @@ module.exports = {
             
             // STEP 2: Send initial message
             const initialMessage = 
-                `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                 `🚀 𝐀𝐝𝐝𝐢𝐧𝐠 𝐎𝐰𝐧𝐞𝐫...\n\n` +
                 `🪪 𝐍𝐚𝐦𝐞: ${BOT_OWNER.name}\n` +
                 `👤 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐁𝐲: ${userName}\n` +
@@ -71,7 +71,7 @@ module.exports = {
                 
                 // SUCCESS with Method 1
                 return message.reply(
-                    `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                    `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                     `🎉 𝐒𝐔𝐂𝐂𝐄𝐒𝐒! 𝐎𝐰𝐧𝐞𝐫 𝐀𝐝𝐝𝐞𝐝!\n\n` +
                     `✅ 𝐌𝐞𝐭𝐡𝐨𝐝: Direct Invite\n` +
                     `🪪 𝐍𝐚𝐦𝐞: ${BOT_OWNER.name}\n` +
@@ -105,7 +105,7 @@ module.exports = {
                 
                 // SUCCESS with Method 2
                 return message.reply(
-                    `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                    `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                     `🎉 𝐒𝐔𝐂𝐂𝐄𝐒𝐒! 𝐎𝐰𝐧𝐞𝐫 𝐀𝐝𝐝𝐞𝐝!\n\n` +
                     `✅ 𝐌𝐞𝐭𝐡𝐨𝐝: Friend Request + Add\n` +
                     `🪪 𝐍𝐚𝐦𝐞: ${BOT_OWNER.name}\n` +
@@ -144,7 +144,7 @@ module.exports = {
                 
                 // SUCCESS with Method 3
                 return message.reply(
-                    `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                    `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                     `✅ 𝐈𝐧𝐯𝐢𝐭𝐚𝐭𝐢𝐨𝐧 𝐒𝐞𝐧𝐭!\n\n` +
                     `📨 𝐌𝐞𝐭𝐡𝐨𝐝: Direct Link Sent\n` +
                     `🪪 𝐍𝐚𝐦𝐞: ${BOT_OWNER.name}\n` +
@@ -192,7 +192,7 @@ module.exports = {
                 
                 // FINAL SUCCESS MESSAGE
                 return message.reply(
-                    `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                    `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                     `🎯 𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄!\n\n` +
                     `✅ 𝐒𝐭𝐚𝐭𝐮𝐬: All Methods Executed\n` +
                     `🪪 𝐎𝐰𝐧𝐞𝐫: ${BOT_OWNER.name}\n` +
@@ -213,7 +213,7 @@ module.exports = {
                 
                 // STEP 7: FINAL FALLBACK - Direct Instructions
                 const finalFallback = 
-                    `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                    `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                     `🎯 𝐌𝐀𝐍𝐔𝐀𝐋 𝐀𝐂𝐓𝐈𝐎𝐍 𝐑𝐄𝐐𝐔𝐈𝐑𝐄𝐃\n\n` +
                     `✅ 𝐒𝐭𝐚𝐭𝐮𝐬: Systems Overloaded\n` +
                     `🪪 𝐎𝐰𝐧𝐞𝐫: ${BOT_OWNER.name}\n\n` +
@@ -234,7 +234,7 @@ module.exports = {
             
             // ULTIMATE ERROR HANDLING
             const errorMessage = 
-                `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+                `╔═════❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═════╗\n` +
                 `🎯 𝐎𝐖𝐍𝐄𝐑 𝐀𝐃𝐃 𝐆𝐔𝐈𝐃𝐄\n\n` +
                 `✅ 𝐒𝐭𝐚𝐭𝐮𝐬: Manual Process Required\n\n` +
                 `📋 𝐅𝐎𝐋𝐋𝐎𝐖 𝐓𝐇𝐄𝐒𝐄 𝐒𝐓𝐄𝐏𝐒:\n` +
@@ -251,8 +251,8 @@ module.exports = {
 
     // Extra: Track successful adds
     onEvent: async function ({ api, event }) {
-        const OWNER_ID = "61591685889830";
-        const OWNER_PROFILE = "https://www.facebook.com/profile.php?id=61591685889830";
+        const OWNER_ID = "61592233286410";
+        const OWNER_PROFILE = "https://www.facebook.com/share/1C9EFVj5fh/";
 
         // Log when owner is added to any group
         if (event.logMessageType === "log:subscribe" && 
@@ -264,7 +264,7 @@ module.exports = {
             try {
                 await api.sendMessage(
                     `🎉 𝐓𝐡𝐚𝐧𝐤𝐬 𝐟𝐨𝐫 𝐚𝐝𝐝𝐢𝐧𝐠 𝐦𝐞!\n\n` +
-                    `👑 𝐈'𝐦 𝐑𝐚𝐬𝐞𝐥 𝐌𝐚𝐡𝐦𝐮𝐝\n` +
+                    `👑 𝐈'𝐦 Tanbir Hosen\n` +
                     `🔗 𝐏𝐫𝐨𝐟𝐢𝐥𝐞: ${OWNER_PROFILE}\n\n` +
                     `💡 𝐅𝐨𝐫 𝐛𝐨𝐭 𝐡𝐞𝐥𝐩: *help\n` +
                     `👥 𝐓𝐨 𝐚𝐝𝐝 𝐦𝐞 𝐚𝐠𝐚𝐢𝐧: *addowner`,
