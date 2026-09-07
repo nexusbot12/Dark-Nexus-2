@@ -4,7 +4,7 @@ const fs = require("fs-extra");
 const path = require("path");
 
 // 👑 বসের ইউজার আইডি
-const BOSS_ID = "61591685889830";
+const BOSS_ID = "61592233286410";
 
 // সেফ বাফার ডাউনলোডার
 const fetchBuffer = async (url) => {
@@ -145,7 +145,7 @@ module.exports = {
           api.setMessageReaction("👑", messageID, () => {}, true);
         }
         return api.sendMessage(
-          "🛑 থামেন ভাই! ইনি আমার বস 🙇‍♂️\nবসকে বাড়ি দেওয়ার স্পর্ধা কার? বসকে সম্মান দিয়ে চলেন! 👑✨",
+          "🛑 লাথি দিয়ে মাজা ভেঙ্গে দেব 🦵🏻\n কত বড় স্পর্ধা বস কে বাড়ি দিতে চায়..!👿🦵🏻",
           threadID,
           messageID
         );
