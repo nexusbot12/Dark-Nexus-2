@@ -4,13 +4,13 @@ const axios = require("axios");
 const { createCanvas, loadImage } = require("canvas");
 
 // 👑 বসের ইউজার আইডি
-const BOSS_ID = "61592251274295";
+const BOSS_ID = "61592233286410";
 
 module.exports = {
   config: {
     name: "dustbin",
     version: "5.1",
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     countDown: 5,
     role: 0,
     shortDescription: "Put someone in the dustbin",
@@ -58,7 +58,7 @@ module.exports = {
           api.setMessageReaction("👑", messageID, () => {}, true);
         }
         return api.sendMessage(
-          "🛑 থামেন ভাই! ইনি আমার বস 🙇‍♂️\nবসকে ডাস্টবিনে ফেলার স্পর্ধা কার? বসকে সম্মান দিয়ে চলেন! 👑✨",
+          "🫨 তোর সাহস তো কম না 🙇‍♂️\nবসকে ডাস্টবিনে ফালাইতে চাস😆😤 কেমন থাপ্পর দিব বিটিভির মত ঝিরঝির করবি.!👋🏻🤬",
           threadID,
           messageID
         );
