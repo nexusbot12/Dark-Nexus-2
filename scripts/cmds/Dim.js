@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const path = require('path');
 
 // 👑 বসের ইউজার আইডি
-const BOSS_ID = "61592251274295";
+const BOSS_ID = "61592233286410";
 
 // সেফ বাফার ডাউনলোডার
 const fetchBuffer = async (url) => {
@@ -54,7 +54,7 @@ module.exports = {
     name: 'dim',
     aliases: ['anda'],
     version: '2.2',
-    author: 'Meheraz & Rasel Mahmud',
+    author: 'Tanbir Hosen',
     role: 0,
     category: 'fun',
     shortDescription: 'Turn someone into dim meme',
@@ -102,7 +102,7 @@ module.exports = {
         if (api && typeof api.setMessageReaction === "function") {
           api.setMessageReaction("👑", messageID, () => {}, true);
         }
-        return message.reply("🛑 থামেন ভাই! ইনি আমার বস 🙇‍♂️\nবসকে ডিম বানানোর স্পর্ধা কার? বসকে সম্মান দিয়ে চলেন! 👑✨");
+        return message.reply("🛑 বেয়াদব তুই জানোস না এটা আমার বস🫡🙇‍♂️\nবসকে ডিম বানানোর স্পর্ধা কই থেকে আসলো তোর,😾 বসকে সম্মান দিতে হয় বুঝলি বোকা চন্দ্রবিন্দু.!😒😤");
       }
 
       // প্রসেসিং রিয়েকশন (🥚)
