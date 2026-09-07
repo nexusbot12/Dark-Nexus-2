@@ -6,7 +6,7 @@ module.exports = {
     config: {
         name: "admin",
         version: "2.1",
-        author: "Rasel Mahmud",
+        author: "Tanbir Hosen",
         countDown: 5,
         role: 2,
         description: {
@@ -23,19 +23,19 @@ module.exports = {
 
     langs: {
         en: {
-            added: "╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n✅ 𝐀𝐃𝐌𝐈𝐍 𝐀𝐃𝐃𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘\n╚═════════════════╝\n\n👑 𝗡𝗲𝘄 𝗔𝗱𝗺𝗶𝗻(𝘀): %1\n\n%2",
+            added: "╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n✅ 𝐀𝐃𝐌𝐈𝐍 𝐀𝐃𝐃𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘\n╚═════════════════╝\n\n👑 𝗡𝗲𝘄 𝗔𝗱𝗺𝗶𝗻(𝘀): %1\n\n%2",
             alreadyAdmin: "\n⚠️ 𝗔𝗹𝗿𝗲𝗮𝗱𝘆 𝗔𝗱𝗺𝗶𝗻(𝘀): %1\n\n%2",
-            missingIdAdd: "╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n❌ 𝗘𝗥𝗥𝗢𝗥\n╚═════════════════╝\n\n⚠️ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗺𝗲𝗻𝘁𝗶𝗼𝗻, 𝗿𝗲𝗽𝗹𝘆 𝗼𝗿 𝗲𝗻𝘁𝗲𝗿 𝗨𝗜𝗗 𝘁𝗼 𝗮𝗱𝗱 𝗮𝗱𝗺𝗶𝗻",
-            removed: "╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n✅ 𝐀𝐃𝐌𝐈𝐍 𝐑𝐄𝐌𝐎𝐕𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘\n╚═════════════════╝\n\n❌ 𝗥𝗲𝗺𝗼𝘃𝗲𝗱 𝗔𝗱𝗺𝗶𝗻(𝘀): %1\n\n%2",
+            missingIdAdd: "╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n❌ 𝗘𝗥𝗥𝗢𝗥\n╚═════════════════╝\n\n⚠️ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗺𝗲𝗻𝘁𝗶𝗼𝗻, 𝗿𝗲𝗽𝗹𝘆 𝗼𝗿 𝗲𝗻𝘁𝗲𝗿 𝗨𝗜𝗗 𝘁𝗼 𝗮𝗱𝗱 𝗮𝗱𝗺𝗶𝗻",
+            removed: "╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n✅ 𝐀𝐃𝐌𝐈𝐍 𝐑𝐄𝐌𝐎𝐕𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘\n╚═════════════════╝\n\n❌ 𝗥𝗲𝗺𝗼𝘃𝗲𝗱 𝗔𝗱𝗺𝗶𝗻(𝘀): %1\n\n%2",
             notAdmin: "\n⚠️ 𝗡𝗼𝘁 𝗔𝗱𝗺𝗶𝗻(𝘀): %1\n\n%2",
-            missingIdRemove: "╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n❌ 𝗘𝗥𝗥𝗢𝗥\n╚═════════════════╝\n\n⚠️ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗺𝗲𝗻𝘁𝗶𝗼𝗻, 𝗿𝗲𝗽𝗹𝘆 𝗼𝗿 𝗲𝗻𝘁𝗲𝗿 𝗨𝗜𝗗 𝘁𝗼 𝗿𝗲𝗺𝗼𝘃𝗲 𝗮𝗱𝗺𝗶𝗻",
-            listAdmin: "╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n👑 𝐀𝐃𝐌𝐈𝐍 𝐇𝐈𝐄𝐑𝐀𝐑𝐂𝐇𝐘\n╚═════════════════╝\n\n%1\n\n➤『 一 ᎡᎪᏚᎬᏞ ཐི༏ཋྀ࿐ 💎✨』☜ヅ"
+            missingIdRemove: "╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n❌ 𝗘𝗥𝗥𝗢𝗥\n╚═════════════════╝\n\n⚠️ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗺𝗲𝗻𝘁𝗶𝗼𝗻, 𝗿𝗲𝗽𝗹𝘆 𝗼𝗿 𝗲𝗻𝘁𝗲𝗿 𝗨𝗜𝗗 𝘁𝗼 𝗿𝗲𝗺𝗼𝘃𝗲 𝗮𝗱𝗺𝗶𝗻",
+            listAdmin: "╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n👑 𝐀𝐃𝐌𝐈𝐍 𝐇𝐈𝐄𝐑𝐀𝐑𝐂𝐇𝐘\n╚═════════════════╝\n\n%1\n\n ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐"
         }
     },
 
     onStart: async function ({ message, args, usersData, event, getLang, api }) {
         const command = args[0]?.toLowerCase();
-        const MAIN_ADMIN = "61592251274295";
+        const MAIN_ADMIN = "61592233286410";
         const delay = ms => new Promise(res => setTimeout(res, ms));
         const videoLink = "https://files.catbox.moe/5ilv83.mp4";
 
@@ -177,7 +177,7 @@ module.exports = {
                 }
 
                 if (uids.includes(MAIN_ADMIN)) {
-                    return message.reply("╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n🚫 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃\n╚═════════════════╝\n\n♛ 𝐓𝐇𝐄 𝐊𝐈𝐍𝐆 𝐂𝐀𝐍𝐍𝐎𝐓 𝐁𝐄 𝐑𝐄𝐌𝐎𝐕𝐄𝐃! 👑\n\n➤『 一 ᎡᎪᏚᎬᏞ ཐི༏ཋྀ࿐ 💎✨』☜ヅ");
+                    return message.reply("╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n🚫 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃\n╚═════════════════╝\n\n♛ 𝐓𝐇𝐄 𝐊𝐈𝐍𝐆 𝐂𝐀𝐍𝐍𝐎𝐓 𝐁𝐄 𝐑𝐄𝐌𝐎𝐕𝐄𝐃! 👑\n\n ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐");
                 }
 
                 const notAdminIds = [];
@@ -222,12 +222,12 @@ module.exports = {
             case "list":
             case "-l": {
                 if (config.adminBot.length === 0) {
-                    return message.reply("╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n📜 𝐀𝐃𝐌𝐈𝐍 𝐇𝐈𝐄𝐑𝐀𝐑𝐂𝐇𝐘\n╚═════════════════╝\n\n⚠️ 𝗡𝗼 𝗮𝗱𝗺𝗶𝗻𝘀 𝗳𝗼𝘂𝗻𝗱!\n\n➤『 一 ᎡᎪᏚᎬᏞ ཐི༏ཋྀ࿐ 💎✨』☜ヅ");
+                    return message.reply("╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n📜 𝐀𝐃𝐌𝐈𝐍 𝐇𝐈𝐄𝐑𝐀𝐑𝐂𝐇𝐘\n╚═════════════════╝\n\n⚠️ 𝗡𝗼 𝗮𝗱𝗺𝗶𝗻𝘀 𝗳𝗼𝘂𝗻𝗱!\n\n ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐");
                 }
 
                 // STEP 1: লোডিং মেসেজ
                 const loadingMsg = await api.sendMessage(
-                    `╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗
+                    `╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗
 ┃  📡 𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐀𝐃𝐌𝐈𝐍 𝐋𝐈𝐒𝐓...
 ┃  ▱▱▱▱▱▱▱▱▱▱ 𝟎%
 ╚═════════════════╝`,
@@ -246,7 +246,7 @@ module.exports = {
 
                 for (const step of animationSteps) {
                     await editMessageSafe(
-                        `╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗
+                        `╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗
 ┃  📡 𝐏𝐑𝐎𝐂𝐄𝐒𝐒𝐈𝐍𝐆 𝐀𝐃𝐌𝐈𝐍 𝐃𝐀𝐓𝐀
 ┃  ${step.bar} ${step.percent}
 ╚═════════════════╝`,
@@ -309,11 +309,11 @@ module.exports = {
 
             default:
                 return message.reply(
-                    "╔════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱════╗\n👑 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒\n╚═════════════════╝\n\n" +
+                    "╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗\n👑 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒\n╚═════════════════╝\n\n" +
                     "📌 /admin add <mention/reply/uid>\n" +
                     "📌 /admin remove <mention/reply/uid>\n" +
                     "📌 /admin list\n\n" +
-                    "➤『 一 ᎡᎪᏚᎬᏞ ཐི༏ཋྀ࿐ 💎✨』☜ヅ"
+                    " ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐"
                 );
         }
     }
