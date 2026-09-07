@@ -6,7 +6,7 @@ const mahmud = async () => {
 };
 
 /**
-* @author MahMUD
+* @author mahmud
 * @author: do not delete it
 */
 
@@ -14,7 +14,7 @@ module.exports = {
   config: {
     name: "4k",
     version: "1.7",
-    author: "MahMUD",
+    author: "Tanbir Hosen",
     countDown: 10,
     role: 0,
     category: "AI",
@@ -69,7 +69,7 @@ module.exports = {
       if (waitMsg?.messageID) message.unsend(waitMsg.messageID);
 
       message.reaction("❎", event.messageID);
-      message.reply(`🥹error baby, contact MahMUD.`);
+      message.reply(`🥹error baby, contact mahmud.`);
     }
   }
 };
