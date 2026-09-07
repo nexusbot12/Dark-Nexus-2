@@ -6,20 +6,23 @@ module.exports = {
     name: "join",
     aliases: ["boxlist", "allbox", "groups", "grouplist"],
     version: "3.0.0",
-    author: "RaselMahmud",
+    author: "Tanbir Hossen",
     role: 2,
     shortDescription: "Advanced group management with whitelist",
     longDescription: "View groups, add/leave, and whitelist by name/TID/number",
     category: "system",
     countDown: 5,
     guide: {
-      en: "📌 **COMMANDS:**\n• /join2 - Show group list\n• add 1 2 - Add yourself\n• out 1 2 - Leave groups\n• page 2 - Next page"
+      en: "📌 **COMMANDS:**\n• /join - Show group list\n• add 1 2 - Add yourself\n• out 1 2 - Leave groups\n• page 2 - Next page"
     }
   },
 
   onStart: async function ({ api, event }) {
     const { threadID, messageID, senderID } = event;
     const perPage = 10;
+    const botName = "𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒";
+    const developerName = "➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐";
+    const fbLink = "https://www.facebook.com/share/19RvT5tWXu/";
 
     try {
       // Load whitelist
@@ -41,7 +44,7 @@ module.exports = {
       const groups = allThreads.filter(t => t.isGroup && t.isSubscribed);
       
       if (!groups.length) {
-        return api.sendMessage("⚠️ বটটি কোনো গ্রুপে নেই।", threadID, messageID);
+        return api.sendMessage(`⚠️ [${botName}] কোনো গ্রুপে নেই।`, threadID, messageID);
       }
 
       // Sort by name
@@ -52,8 +55,9 @@ module.exports = {
       const end = start + perPage;
       const currentGroups = groups.slice(start, end);
 
-      // Create message
-      let msg = `📦 | 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐒𝐓 (𝐏𝐚𝐠𝐞 ${page}/${Math.ceil(groups.length/perPage)})\n`;
+      // Create message (স্বাভাবিক ফরম্যাটে বটের নাম ও ডেভলপার ইনফো যুক্ত)
+      let msg = `🤖 Bot: ${botName}\n`;
+      msg += `📦 | 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐒𝐓 (𝐏𝐚𝐠𝐞 ${page}/${Math.ceil(groups.length/perPage)})\n`;
       msg += `📊 𝐓𝐨𝐭𝐚𝐥: ${groups.length} groups | 🔒 WL: ${Object.keys(whitelist).length}\n\n`;
       
       currentGroups.forEach((g, i) => {
@@ -71,7 +75,9 @@ module.exports = {
       msg += `🎯 **𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:**\n`;
       msg += `• add 1 3 - Add yourself to groups\n`;
       msg += `• out 1 2 - Leave from groups\n`;
-      msg += `• page 2 - Next page`;
+      msg += `• page 2 - Next page\n\n`;
+      msg += `👑 Dev: ${developerName}\n`;
+      msg += `🔗 ${fbLink}`;
 
       // Send message with reply handler
       api.sendMessage(msg.trim(), threadID, (err, info) => {
@@ -89,13 +95,16 @@ module.exports = {
       }, messageID);
 
     } catch (error) {
-      console.error("Error in join2:", error);
-      api.sendMessage("❌ Error loading group list.", threadID, messageID);
+      console.error("Error in join:", error);
+      api.sendMessage(`❌ Error loading group list for ${botName}.`, threadID, messageID);
     }
   },
 
   onReply: async function ({ api, event, Reply }) {
     const { threadID, messageID, senderID, body } = event;
+    const botName = "𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒";
+    const developerName = "➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐";
+    const fbLink = "https://www.facebook.com/share/19RvT5tWXu/";
     
     // Check if reply is from the same user
     if (senderID !== Reply.author) {
@@ -119,20 +128,16 @@ module.exports = {
 
     // ========== HELPER FUNCTIONS ==========
     
-    // Find group by various methods
     const findGroup = (input, groups = Reply.groups) => {
-      // Check if input is a number (index)
       const num = parseInt(input);
       if (!isNaN(num) && num > 0 && num <= groups.length) {
         return groups[num - 1];
       }
       
-      // Check if input is TID (numeric string)
       if (/^\d+$/.test(input)) {
         return groups.find(g => g.threadID === input);
       }
       
-      // Check by name (case insensitive, partial match)
       const searchName = input.toLowerCase();
       const matchingGroups = groups.filter(g => 
         g.name && g.name.toLowerCase().includes(searchName)
@@ -149,12 +154,10 @@ module.exports = {
       return null;
     };
 
-    // Get group display info
     const getGroupInfo = (group) => {
       return `${group.name || "Unnamed Group"} (${group.threadID})`;
     };
 
-    // Save whitelist to file
     const saveWhitelist = () => {
       try {
         fs.writeFileSync(whitelistPath, JSON.stringify(whitelist, null, 2));
@@ -181,7 +184,8 @@ module.exports = {
       }
 
       // Create paginated message
-      let msg = `📦 | 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐒𝐓 (𝐏𝐚𝐠𝐞 ${pageNum}/${Math.ceil(Reply.groups.length/perPage)})\n`;
+      let msg = `🤖 Bot: ${botName}\n`;
+      msg += `📦 | 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐒𝐓 (𝐏𝐚𝐠𝐞 ${pageNum}/${Math.ceil(Reply.groups.length/perPage)})\n`;
       msg += `📊 𝐓𝐨𝐭𝐚𝐥: ${Reply.groups.length} groups | 🔒 WL: ${Object.keys(whitelist).length}\n\n`;
       
       currentGroups.forEach((g, i) => {
@@ -196,9 +200,10 @@ module.exports = {
       });
 
       msg += `━━━━━━━━━━━━━━━━━━━━━━\n`;
-      msg += `🎯 Use: page ${pageNum + 1} for next page`;
+      msg += `🎯 Use: page ${pageNum + 1} for next page\n\n`;
+      msg += `👑 Dev: ${developerName}\n`;
+      msg += `🔗 ${fbLink}`;
 
-      // Send with reply handler
       api.sendMessage(msg.trim(), threadID, (err, info) => {
         if (err) return console.error(err);
         
@@ -325,7 +330,6 @@ module.exports = {
         return api.sendMessage(msg, threadID, messageID);
       }
 
-      // Check if already whitelisted
       if (whitelist[group.threadID]) {
         return api.sendMessage(
           `⚠️ Already whitelisted:\n` +
@@ -335,7 +339,6 @@ module.exports = {
         );
       }
 
-      // Add to whitelist
       whitelist[group.threadID] = {
         name: group.name || "Unnamed Group",
         addedBy: senderID,
@@ -344,14 +347,13 @@ module.exports = {
         addedVia: target
       };
 
-      // Save whitelist
       if (saveWhitelist()) {
         return api.sendMessage(
           `✅ Whitelist ENABLED:\n\n` +
           `📌 Group: ${group.name || "Unnamed Group"}\n` +
           `🆔 TID: ${group.threadID}\n` +
           `👥 Members: ${group.participantIDs?.length || 0}\n\n` +
-          `📍 Bot will now be INACTIVE in this group.\n` +
+          `📍 ${botName} will now be INACTIVE in this group.\n` +
           `🔧 Disable with: wl off ${group.threadID}`,
           threadID
         );
@@ -370,12 +372,10 @@ module.exports = {
       let group = null;
       let groupId = null;
 
-      // Check if target is a TID in whitelist
       if (whitelist[target]) {
         groupId = target;
         group = Reply.groups.find(g => g.threadID === target);
       } else {
-        // Find group by search
         const foundGroup = findGroup(target);
         if (foundGroup && !foundGroup.multiple) {
           group = foundGroup;
@@ -387,17 +387,15 @@ module.exports = {
         return api.sendMessage(`❌ Not whitelisted: ${target}`, threadID, messageID);
       }
 
-      // Remove from whitelist
       const groupName = whitelist[groupId].name;
       delete whitelist[groupId];
 
-      // Save whitelist
       if (saveWhitelist()) {
         return api.sendMessage(
           `✅ Whitelist DISABLED:\n\n` +
           `📌 Group: ${groupName}\n` +
           `🆔 TID: ${groupId}\n\n` +
-          `📍 Bot will now be ACTIVE in this group.`,
+          `📍 ${botName} will now be ACTIVE in this group.`,
           threadID
         );
       } else {
@@ -427,7 +425,8 @@ module.exports = {
         msg += `   🔧 Disable: wl off ${id}\n\n`;
       });
 
-      msg += `📍 Total: ${whitelistedIds.length} whitelisted groups`;
+      msg += `📍 Total: ${whitelistedIds.length} whitelisted groups\n`;
+      msg += `🤖 Bot: ${botName}`;
       
       return api.sendMessage(msg, threadID);
     }
@@ -463,7 +462,7 @@ module.exports = {
           `🆔 TID: ${group.threadID}\n` +
           `📅 Added: ${new Date(wlData.addedAt).toLocaleString()}\n` +
           `👤 By: ${wlData.addedBy}\n` +
-          `📍 Bot is INACTIVE in this group\n\n` +
+          `📍 ${botName} is INACTIVE in this group\n\n` +
           `🔧 Remove with: wl off ${group.threadID}`,
           threadID
         );
@@ -472,7 +471,7 @@ module.exports = {
           `🔓 𝐍𝐎𝐓 𝐖𝐇𝐈𝐓𝐄𝐋𝐈𝐒𝐓𝐄𝐃\n\n` +
           `📌 Group: ${group.name || "Unnamed Group"}\n` +
           `🆔 TID: ${group.threadID}\n` +
-          `📍 Bot is ACTIVE in this group\n\n` +
+          `📍 ${botName} is ACTIVE in this group\n\n` +
           `🔧 Whitelist with: wl on ${group.threadID}`,
           threadID
         );
