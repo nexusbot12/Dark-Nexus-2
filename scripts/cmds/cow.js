@@ -4,7 +4,7 @@ const path = require("path");
 const { createCanvas, loadImage } = require("canvas");
 
 // 👑 বসের ইউজার আইডি
-const BOSS_ID = "61591685889830";
+const BOSS_ID = "61592233286410";
 const BG_URL = "https://i.imgur.com/nNf50SF.jpeg";
 
 // সেফ বাফার ডাউনলোডার
@@ -121,7 +121,7 @@ module.exports = {
           api.setMessageReaction("👑", messageID, () => {}, true);
         }
         return api.sendMessage(
-          "🛑 থামেন ভাই! ইনি আমার বস 🙇‍♂️\nবসকে গরু বানানোর স্পর্ধা কার? বসকে সম্মান দিয়ে চলেন! 👑✨",
+          "🛑 থামেন ভাই! ইনি আমার বস 🙇‍♂️\nবসকে গরু বানালে বসকে অপমান করা হবে 🙂 বসকে সম্মান দিয়ে চলেন! 👍🏻",
           threadID,
           messageID
         );
