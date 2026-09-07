@@ -7,7 +7,7 @@ module.exports = {
     name: "crush",
     aliases: ["ক্রাশ"],
     version: "1.0",
-    author: "Abdul Alim",
+    author: "Tanbir Hosen",
     countDown: 0,
     role: 0,
     shortDescription: "we together",
@@ -34,9 +34,10 @@ module.exports = {
 
     bal(one, two).then(ptth => {
       message.reply({
-        body: `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗
+        body: `╔══❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱══╗
 ✨ You are my crush, always on my mind 💗
-╚═══════════════════╝`,
+╚═══════════════╝
+🫅🏻𝐀𝐮𝐭𝐡𝐨𝐫:☜𝐓𝐚𝐧𝐛𝐢𝐫 𝐇𝐨𝐬𝐞𝐧_۵`,
         attachment: fs.createReadStream(ptth)
       });
     });
