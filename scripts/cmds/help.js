@@ -7,7 +7,7 @@ module.exports = {
   config: {
     name: "help",
     version: "9.0",
-    author: "Rasel Mahmud",
+    author: "Tanbir Hossen",
     countDown: 3,
     role: 0,
     description: "❖ Complete Help System with Full Author Credits ❖",
@@ -145,12 +145,12 @@ module.exports = {
       console.error("Help system error:", error);
       
       const errorMsg = 
-        `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+        `╔═══❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱═══╗\n` +
         `         ❌ 𝐄𝐑𝐑𝐎𝐑\n\n` +
         `Help system error\n\n` +
         `🔄 Try: ${prefix}help\n` +
-        `👑 Developer: Rasel Mahmud\n` +
-        `🔗 https://fb.com/share/1AcArr1zGL\n` +
+        `👑 Developer: ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐\n` +
+        `🔗 https://www.facebook.com/share/19RvT5tWXu/\n` +
         `╚═══════════════════╝`;
       
       return message.reply(errorMsg);
@@ -184,7 +184,7 @@ module.exports = {
       .replace(/\{pn\}/g, prefix + config.name);
     
     const commandInfo = 
-      `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+      `╔════❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱════╗\n` +
       `         🎮 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐈𝐍𝐅𝐎\n\n` +
       `📛 Name: ${config.name}\n` +
       `📝 Description: ${description}\n` +
@@ -196,8 +196,8 @@ module.exports = {
       `👤 Author: ${author}\n` +
       `🌟 Credits: ${credits}\n\n` +
       `🎯 How to use:\n${guide}\n\n` +
-      `👑 Bot System by Rasel Mahmud\n` +
-      `🔗 https://fb.com/share/1AcArr1zGL\n` +
+      `👑 Bot System by ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐\n` +
+      `🔗 https://www.facebook.com/share/19RvT5tWXu/\n` +
       `╚═══════════════════╝`;
     
     return commandInfo;
@@ -230,7 +230,7 @@ module.exports = {
       .sort((a, b) => b[1].count - a[1].count);
     
     let messageText = 
-      `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+      `╔════❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱════╗\n` +
       `         👑 𝐁𝐎𝐓 𝐀𝐔𝐓𝐇𝐎𝐑𝐒\n\n` +
       `📊 Total Authors: ${authors.size}\n\n`;
     
@@ -254,8 +254,8 @@ module.exports = {
       });
     }
     
-    messageText += `\n👑 Main Developer: Rasel Mahmud\n`;
-    messageText += `🔗 https://fb.com/share/1AcArr1zGL\n`;
+    messageText += `\n👑 Main Developer: ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐\n`;
+    messageText += `🔗 https://www.facebook.com/share/19RvT5tWXu/\n`;
     messageText += `╚═══════════════════╝`;
     
     return messageText;
@@ -282,7 +282,7 @@ module.exports = {
     }
     
     let messageText = 
-      `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+      `╔════❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱════╗\n` +
       `         👤 𝐀𝐔𝐓𝐇𝐎𝐑: ${authorDisplayName}\n\n` +
       `📊 Commands: ${authorCommands.length}\n\n`;
     
@@ -299,7 +299,7 @@ module.exports = {
     }
     
     messageText += `\n👑 Author: ${authorDisplayName}\n`;
-    messageText += `🔗 Bot System by Rasel Mahmud\n`;
+    messageText += `🔗 Bot System by ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐\n`;
     messageText += `╚═══════════════════╝`;
     
     return messageText;
@@ -323,7 +323,7 @@ module.exports = {
     const sortedCategories = Object.keys(categories).sort();
     
     let messageText = 
-      `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+      `╔════❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱════╗\n` +
       `         🎮 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓\n\n`;
     
     for (const category of sortedCategories) {
@@ -341,8 +341,8 @@ module.exports = {
       `┃ ⬤ Type '${prefix}help authors' for credits\n` +
       `┃ ⬤ Type '${prefix}help cat' for categories\n` +
       `┗─━─━─━─━─━─━─━─▢\n\n` +
-      `								❰𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢❱\n` +
-      `						   👑 by Rasel Mahmud`;
+      `								❰𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒❱\n` +
+      `						   👑 by ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐`;
     
     return messageText;
   },
@@ -369,7 +369,7 @@ module.exports = {
     const emoji = this.getCategoryEmoji(categoryUpper);
     
     let messageText = 
-      `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+      `╔════❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱════╗\n` +
       `         ${emoji} ${categoryUpper}\n\n` +
       `📊 Commands: ${categoryCommands.length}\n\n`;
     
@@ -382,7 +382,7 @@ module.exports = {
     messageText += `Example: ${prefix}help ${categoryCommands[0] || 'info'}\n\n`;
     
     messageText += `👑 Category: ${categoryUpper}\n`;
-    messageText += `🔗 Bot by Rasel Mahmud\n`;
+    messageText += `🔗 Bot by ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐\n`;
     messageText += `╚═══════════════════╝`;
     
     return messageText;
@@ -409,7 +409,7 @@ module.exports = {
     }
     
     let messageText = 
-      `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗\n` +
+      `╔════❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱════╗\n` +
       `         🔍 𝐒𝐄𝐀𝐑𝐂𝐇: "${keyword}"\n\n`;
     
     if (foundCommands.length > 0) {
@@ -429,8 +429,8 @@ module.exports = {
       messageText += `• ${prefix}help authors - All authors\n`;
     }
     
-    messageText += `\n👑 Search by Rasel Mahmud\n`;
-    messageText += `🔗 https://fb.com/share/1AcArr1zGL\n`;
+    messageText += `\n👑 Search by ➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐\n`;
+    messageText += `🔗 https://www.facebook.com/share/19RvT5tWXu/\n`;
     messageText += `╚═══════════════════╝`;
     
     return messageText;
