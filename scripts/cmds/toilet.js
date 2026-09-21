@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 // 👑 বসের ইউজার আইডি
-const BOSS_ID = "61591685889830";
+const BOSS_ID = "61592233286410";
 
 const baseApiUrl = async () => {
   const base = await axios.get(
@@ -65,7 +65,7 @@ module.exports = {
         api.setMessageReaction("👑", messageID, () => {}, true);
       }
       return api.sendMessage(
-        "🛑 থামেন ভাই! ইনি আমার বস 🙇‍♂️\nবসের ছবি দিয়ে টয়লেট বানানো নিষেধ, বসকে সম্মান দিয়ে চলেন! 👑✨",
+        " তুই কি পাগল হইছোস🤦🏻‍♂️🤣 🙇‍♂️\nবসের ছবি দিয়ে টয়লেট বানানো নিষেধ, বসকে সম্মান দিয়ে চলেন!🫡🤴🏻",
         threadID,
         messageID
       );
@@ -85,7 +85,7 @@ module.exports = {
       fs.writeFileSync(filePath, response.data);
       
       api.sendMessage(
-        { attachment: fs.createReadStream(filePath), body: "ওয়াক থু 🤮" },
+        { attachment: fs.createReadStream(filePath), body: "ওয়াক থু🤮, তোরে তো সেই মানাইছে🫰🏻🤢" },
         threadID,
         () => {
           if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
