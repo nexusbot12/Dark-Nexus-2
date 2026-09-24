@@ -12,11 +12,11 @@ module.exports = {
 
 	langs: {
 		en: {
-			welcomeMessage: `💫 Thank you for inviting me to the group!
+			welcomeMessage: `💫💯 Thank you for inviting me to the group!🤸🏻‍♂️
 
-🤖 Bot prefix: %1
-🛠 To view all commands, type: %1help
-👑 一 ᎡᎪᏚᎬᏞཐི༏ཋྀ࿐ Facebook ID: https://www.facebook.com/profile.php?id=61591685889830`
+👾 Bot prefix: %1
+🛠️To view all commands, type: %1help ✅
+🤴🏻➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐ Facebook ID: https://www.facebook.com/share/1EnV4Y8RTB/ profile.php?id=61591685889830`
 		}
 	},
 
@@ -40,7 +40,7 @@ module.exports = {
 			api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
 
 		// ✅ ভিডিও path (নিজের ভিডিও রাখবে)
-		const videoPath = path.join(__dirname, "tmp", "received_1509247970115917.mp4");
+		const videoPath = path.join(__dirname, "tmp", "lv_0_20260903142255~2.mp4");
 
 		// ✅ ভিডিও থাকলে ভিডিও + মেসেজ পাঠাবে
 		if (fs.existsSync(videoPath)) {
