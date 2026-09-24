@@ -16,7 +16,7 @@ module.exports = {
 
 👾 Bot prefix: %1
 🛠️To view all commands, type: %1help ✅
-🤴🏻➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐ Facebook ID: https://www.facebook.com/share/1EnV4Y8RTB/ profile.php?id=61591685889830`
+🤴🏻➤𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐ Facebook ID: https://www.facebook.com/share/14puSi4G52k/ profile: php?id=61592233286410`
 		}
 	},
 
