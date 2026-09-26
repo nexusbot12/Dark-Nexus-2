@@ -110,10 +110,10 @@ module.exports = {
     try {
       // STEP 1: Send initial message
       const initialMsg = await api.sendMessage(
-        `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗
+        `╔═══❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱═══╗
 ┃  📡 𝐒𝐓𝐀𝐑𝐓𝐈𝐍𝐆 𝐒𝐘𝐒𝐓𝐄𝐌...
 ┃  ▱▱▱▱▱▱▱▱▱▱ 𝟎%
-╚═══════════════════╝`,
+╚═════════════════╝`,
         event.threadID
       );
       currentMessageID = initialMsg.messageID;
@@ -129,10 +129,10 @@ module.exports = {
 
       for (const step of animationSteps) {
         await editMessageSafe(
-          `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗
+          `╔═══❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱═══╗
 ┃  📡 𝐏𝐑𝐎𝐂𝐄𝐒𝐒𝐈𝐍𝐆 𝐃𝐀𝐓𝐀
 ┃  ${step.bar} ${step.percent}
-╚═══════════════════╝`,
+╚═════════════════╝`,
           currentMessageID
         );
         await delay(step.delay);
@@ -168,16 +168,16 @@ module.exports = {
 
       // STEP 5: Send final message with random image attachment
       const finalBody = `
-╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗
+╔══❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱══╗
 ┃  ⏱️  𝐔𝐏𝐓𝐈𝐌𝐄 : ${uptimeFormatted}
 ┃  📡 𝐏𝐈𝐍𝐆 : ${ping}𝐦𝐬
 ┃  📅 𝐃𝐀𝐓𝐄 : ${date}
 ┃  ⏰ 𝐓𝐈𝐌𝐄 : ${time} (𝐁𝐃𝐓)
 ┃  👥 𝐔𝐒𝐄𝐑𝐒 : ${totalUsers}
 ┃  💬 𝐓𝐇𝐑𝐄𝐀𝐃𝐒 : ${totalThreads}
-┃  👑 𝐂𝐑𝐄𝐀𝐓𝐎𝐑 : 𝐑𝐚𝐬𝐞𝐥 𝐌𝐚𝐡𝐦𝐮𝐝
+┃  🤴🏻 𝐎𝐖𝐍𝐄𝐑 :—̳͟͞͞𝐓A̶𝙽𝙱𝕚𝗥_☜۵༎࿐
 ┃  ✅ 𝐒𝐓𝐀𝐓𝐔𝐒 : 𝐎𝐏𝐄𝐑𝐀𝐓𝐈𝐎𝐍𝐀𝐋
-╚═══════════════════╝
+╚═════════════════╝
 `.trim();
 
       const randomImage = imageLinks[Math.floor(Math.random() * imageLinks.length)];
@@ -199,10 +199,10 @@ module.exports = {
     } catch (error) {
       console.error("Uptime command error:", error);
 
-      const errorMessage = `╔═════❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═════╗
+      const errorMessage = `╔═══❰ 𝐃𝐀𝐑𝐊•𝐍𝐄𝐗𝐔𝐒 ❱═══╗
 ┃  ⚠️  𝐒𝐓𝐀𝐓𝐔𝐒 : 𝐎𝐍𝐋𝐈𝐍𝐄
 ┃  📊 𝐁𝐨𝐭 𝐢𝐬 𝐫𝐮𝐧𝐧𝐢𝐧𝐠 𝐧𝐨𝐫𝐦𝐚𝐥𝐥𝐲
-╚═══════════════════╝`;
+╚═════════════════╝`;
 
       if (currentMessageID) {
         try { await api.unsendMessage(currentMessageID); } catch(e) {}
