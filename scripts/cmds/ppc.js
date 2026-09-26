@@ -56,7 +56,7 @@ module.exports.onStart = async ({ api, event, args }) => {
         const response = await axios.get(imageUrl, { responseType: 'stream' });
 
         if (typeof api.changeAvatar === 'function') {
-            api.changeAvatar(response.data, "Updated by Rasel Mahmud", null, (err) => {
+            api.changeAvatar(response.data, "Updated by Tanbir Hosen", null, (err) => {
                 if (err) {
                     console.error(err);
                     return api.sendMessage(`❌ প্রোফাইল পিকচার পরিবর্তন করতে ব্যর্থ হয়েছে!\nError: ${err.message || err}`, event.threadID, event.messageID);
