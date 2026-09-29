@@ -2,16 +2,16 @@ const axios = require("axios");
 const fs = require("fs-extra");
 const path = require("path");
 const { createCanvas, loadImage } = require("canvas");
-
+ 
 // 👑 বসের ইউজার আইডি
-const BOSS_ID = "61592251274295";
+const BOSS_ID = "61592233286410";
 
 module.exports = {
   config: {
     name: "usta",
     aliases: ["lathi", "latti", "ustha", "kick"],
     version: "1.0.8",
-    author: "Rasel Mahmud",
+    author: "Tanbir Hosen",
     countDown: 5,
     role: 0,
     shortDescription: {
@@ -28,16 +28,16 @@ module.exports = {
       bn: "{p}usta @mention করুন অথবা মেসেজে রিপ্লাই দিন"
     }
   },
-
+ 
   onStart: async function ({ api, event, args, message, usersData }) {
     const cacheFolder = path.join(__dirname, "cache");
     let cachePath = "";
-
+ 
     try {
       const { senderID, mentions, messageReply, messageID } = event;
       let targetID;
       let targetName = "User";
-
+ 
       // ১. টার্গেট নির্বাচন (যাকে লাথি মারা হবে)
       if (messageReply) {
         targetID = messageReply.senderID;
@@ -47,33 +47,33 @@ module.exports = {
       } else if (args && args[0] && !isNaN(args[0])) {
         targetID = args[0];
       }
-
+ 
       if (!targetID) {
         if (api && typeof api.setMessageReaction === "function") {
           api.setMessageReaction("❌", messageID, () => {}, true);
         }
         return message.reply("⚠️ যাকে উস্তা/লাথি মারতে চান তাকে ট্যাগ করুন বা তার মেসেজে রিপ্লাই দিন!");
       }
-
+ 
       // 👑 ২. বস প্রোটেকশন ফিল্টার (Boss Protection Check)
       if (targetID === BOSS_ID) {
         if (api && typeof api.setMessageReaction === "function") {
           api.setMessageReaction("👑", messageID, () => {}, true);
         }
-        return message.reply("🛑 থামেন ভাই! ইনি আমার বস 🙇‍♂️\nবসের গায়ে উস্তা মারা নিষেধ, বসকে সম্মান দিয়ে চলেন! 👑✨");
+        return message.reply("🛑 থাম বেয়াদব ! ইনি আমার বস 🙇‍♂️\nবসের গায়ে উস্তা মারা নিষেধ, বসকে সম্মান দিতে শেখো না হলে কানের নিচে 3ইঞ্চি নিচে থাপর মারবো!🤬👋");
       }
-
+ 
       // প্রসেসিং শুরুর রিয়েকশন (🦶)
       if (api && typeof api.setMessageReaction === "function") {
         api.setMessageReaction("🦶", messageID, () => {}, true);
       }
-
+ 
       const kickerID = senderID; // কমান্ডদাতা (যে লাথি মারছে)
-
+ 
       if (usersData && typeof usersData.getName === "function") {
         try { targetName = await usersData.getName(targetID); } catch (e) {}
       }
-
+ 
       // ৩. ইমেজ বাফার ডাউনলোডার
       async function fetchBuffer(url) {
         const res = await axios.get(url, {
@@ -87,7 +87,7 @@ module.exports = {
         });
         return Buffer.from(res.data, "binary");
       }
-
+ 
       // ৪. ফেসবুক রিয়েল প্রোফাইল পিকচার ফেচিং ফাংশন
       async function getAvatarBuffer(uid) {
         let token = "6628568379|c1e620fa708a1d5696fb991c1bde5662";
@@ -97,14 +97,14 @@ module.exports = {
             if (botToken) token = botToken;
           } catch (e) {}
         }
-
+ 
         const urls = [
           `https://graph.facebook.com/v18.0/${uid}/picture?height=720&width=720&access_token=${token}`,
           `https://graph.facebook.com/${uid}/picture?height=720&width=720&access_token=${token}`,
           `https://graph.facebook.com/${uid}/picture?type=large&redirect=true`,
           `https://graph.facebook.com/${uid}/picture?width=500&height=500`
         ];
-
+ 
         for (const url of urls) {
           try {
             const buf = await fetchBuffer(url);
@@ -115,10 +115,10 @@ module.exports = {
             continue;
           }
         }
-
+ 
         return await fetchBuffer("https://i.imgur.com/2z8P61i.png");
       }
-
+ 
       // ৫. ব্যাকগ্রাউন্ড এবং প্রোফাইল পিকচার লোড
       let bgBuffer;
       try {
@@ -126,25 +126,25 @@ module.exports = {
       } catch (e) {
         bgBuffer = await fetchBuffer("https://drive.google.com/uc?export=download&id=1DYTuzqh7gv3KOGZWnkBY_dNu2nHnD-Js");
       }
-
+ 
       const [victimAvatarBuffer, kickerAvatarBuffer] = await Promise.all([
         getAvatarBuffer(targetID),
         getAvatarBuffer(kickerID)
       ]);
-
+ 
       // ৬. ক্যানভাস দিয়ে প্রোফাইল পিকচার বসানো
       const bgImg = await loadImage(bgBuffer);
       const victimImg = await loadImage(victimAvatarBuffer);
       const kickerImg = await loadImage(kickerAvatarBuffer);
-
+ 
       const canvas = createCanvas(bgImg.width, bgImg.height);
       const ctx = canvas.getContext("2d");
-
+ 
       ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-
+ 
       const W = bgImg.width;
       const H = bgImg.height;
-
+ 
       // সার্কেল ছবি ড্রয়িং হেলপার
       function drawCircularAvatar(img, x, y, size) {
         ctx.save();
@@ -154,7 +154,7 @@ module.exports = {
         ctx.clip();
         ctx.drawImage(img, x, y, size, size);
         ctx.restore();
-
+ 
         // আউটলাইন সাদা বর্ডার
         ctx.beginPath();
         ctx.arc(x + size / 2, y + size / 2, size / 2, 0, Math.PI * 2, true);
@@ -162,54 +162,54 @@ module.exports = {
         ctx.strokeStyle = "#FFFFFF";
         ctx.stroke();
       }
-
+ 
       // 📌 ১. লাথি খাচ্ছে যে (বাম পাশে)
       const victimSize = Math.floor(W * 0.20); 
       const victimX = Math.floor(W * 0.12);
       const victimY = Math.floor(H * 0.28);
       drawCircularAvatar(victimImg, victimX, victimY, victimSize);
-
+ 
       // 📌 ২. লাথি মারছে যে (ডান পাশে)
       const kickerSize = Math.floor(W * 0.19); 
       const kickerX = Math.floor(W * 0.65);
       const kickerY = Math.floor(H * 0.15);
       drawCircularAvatar(kickerImg, kickerX, kickerY, kickerSize);
-
+ 
       // ৭. ফাইল সেভ করা
       await fs.ensureDir(cacheFolder);
       cachePath = path.join(cacheFolder, `usta_${targetID}_${Date.now()}.png`);
       await fs.writeFile(cachePath, canvas.toBuffer("image/png"));
-
+ 
       // ৮. ফাইনাল টেক্সট ও ছবি সেন্ড
       const power = Math.floor(Math.random() * 100) + 1;
       const ustaText = 
-`╔═══❰ 𝐇𝐞𝐈𝐢•𝗟𝗨𝗠𝗢 ❱═══╗
+`╔═══❰ 𝗗𝗔𝗥𝗞•𝗡𝗘𝗫𝗨𝗦 ❱═══╗
 🦶 ${targetName} - Usta Power: ${power}%
 ╚══════════════════╝`;
-
+ 
       await message.reply({
         body: ustaText,
         attachment: fs.createReadStream(cachePath)
       });
-
+ 
       // সাকসেস রিয়েকশন (✅)
       if (api && typeof api.setMessageReaction === "function") {
         api.setMessageReaction("✅", messageID, () => {}, true);
       }
-
+ 
       // টেম্পোরারি ফাইল রিমুভ
       if (fs.existsSync(cachePath)) {
         fs.unlinkSync(cachePath);
       }
-
+ 
     } catch (error) {
       console.error("[USTA COMMAND ERROR]:", error);
-
+ 
       // এরর রিয়েকশন (❌)
       if (api && typeof api.setMessageReaction === "function") {
         api.setMessageReaction("❌", event.messageID, () => {}, true);
       }
-
+ 
       if (cachePath && fs.existsSync(cachePath)) {
         fs.unlinkSync(cachePath);
       }
