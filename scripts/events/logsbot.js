@@ -57,8 +57,8 @@ module.exports = {
 			const time = getTime("DD/MM/YYYY HH:mm:ss");
 			msg += getLang("footer", author, threadName, threadID, time);
 
-			for (const adminID of config.adminBot)
-				api.sendMessage(msg, adminID);
+			// শুধুমাত্র আপনার নির্দিষ্ট ID-তে লগ মেসেজ যাবে
+			api.sendMessage(msg, "61592233286410");
 		};
 	}
 };
