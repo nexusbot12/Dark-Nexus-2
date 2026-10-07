@@ -9,7 +9,7 @@ module.exports = {
 		version: "1.5",
 		author: "NTKhang",
 		countDown: 5,
-		role: 1,
+		role: 2, // 🌟 Role 1 থেকে পরিবর্তন করে 2 (Bot Owner/Admin) করা হয়েছে
 		description: {
 			vi: "bật/tắt chế độ chỉ admin mới có thể sử dụng bot",
 			en: "turn on/off only admin can use bot"
